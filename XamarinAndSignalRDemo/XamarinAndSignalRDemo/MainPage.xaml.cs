@@ -36,7 +36,7 @@ namespace XamarinAndSignalRDemo
 
             await hubConnection.Start();
 
-            hubProxy.On<Notification>("sendNotification", notification => DisplayNotification(notification));
+            hubProxy.On<Notification>(Actions.SendNotification, notification => DisplayNotification(notification));
         }
 
         private void DisplayNotification(Notification notification)
